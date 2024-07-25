@@ -42,6 +42,14 @@ def generate_launch_description():
         }.items(),
     )
 
+    pkg_robocup_simulation = get_package_share_directory('robocup_home_simulation')
+    albert_simulation_path = os.path.join(
+        pkg_robocup_simulation, 'launch', 'albert_gazebo.launch.py')
+    albert_simulation_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(albert_simulation_path),
+    )
+
     return LaunchDescription([
-        small_house_world_launch
+        small_house_world_launch,
+        albert_simulation_launch
     ])
