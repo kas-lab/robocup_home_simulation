@@ -1,6 +1,7 @@
 <sdf version='1.7'>
   <world name='plasys_house'>
-    <plugin name="get_entity_state_plugin" filename="libgazebo_ros_state.so"/>  
+    <plugin name="get_entity_state_plugin" filename="libgazebo_ros_state.so"/> 
+    <plugin name="get_model_properties_plugin" filename="libgazebo_ros_properties.so"/> 
     <model name='Dressers_O3026d3820106_lod0_7'>
       <frame name='Dressers_O3026d3820106_lod0::__model__' attached_to='Dressers_O3026d3820106_lod0::main_link'>
         <pose relative_to='__model__'>-9.5004 8.80021 0 0 -0 0</pose>
