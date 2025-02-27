@@ -3238,7 +3238,7 @@
       </link>
       <pose>0.806903 -0.978864 0 0 -0 0</pose>
     </model>
-    <model name='utensil_spoon_blue'>
+    <model name='obj_1_spoon'>
       <static>0</static>
       <link name='link'>
         <inertial>
