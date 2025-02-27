@@ -7,3 +7,7 @@ repositories:
     type: git
     url: https://github.com/dgarcu/plasys_house_world
     version: master
+  sdf_models:
+    type: git
+    url: https://github.com/kas-lab/SDF_models.git
+    version: main
