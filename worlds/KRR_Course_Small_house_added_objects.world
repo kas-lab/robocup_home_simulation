@@ -114,7 +114,7 @@
       </link>
       <pose>-6.5 0.35 0 0 -0 3.14</pose>
     </model>
-    <model name="drop_1_cutlery">
+    <model name="drop_1_dishwasher">
       <pose>1.5 0 0 0 0 0</pose>
       <static>true</static>
       <link name="link">
@@ -138,7 +138,47 @@
         </visual>
       </link>
     </model>
-    <model name="drop_2_bin">
+    <model name='drop_2_tableware'>
+      <pose>0.356888 -1.47612 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>1 1 0.01</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>1 1 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name="drop_3_livingroom">
       <pose>-4 -3 0 0 0 0</pose>
       <static>true</static>
       <link name="link">
@@ -162,31 +202,7 @@
         </visual>
       </link>
     </model>
-    <!-- <model name="placement_area_living_room_2">
-      <pose>-8 -3 0 0 0 0</pose>
-      <static>true</static>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>1 1 0.01</size> 
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>1 1 0.01</size> 
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 1 0 1</ambient> 
-            <diffuse>1 0 0 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model> -->
-    <model name="drop_3_box">
+    <model name="drop_4_toys">
       <pose>-8 3 0 0 0 0</pose>
       <static>true</static>
       <link name="link">
@@ -210,30 +226,86 @@
         </visual>
       </link>
     </model>
-    <!-- <model name="placement_area_bedroom">
-      <pose>-1 6 0 0 0 0</pose>
-      <static>true</static>
-      <link name="link">
-        <collision name="collision">
+    <model name='drop_5_laundry'>
+      <pose>-2.5096 6.78965 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
           <geometry>
             <box>
-              <size>1 1 0.01</size> 
+              <size>1 1 0.01</size>
             </box>
           </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
         </collision>
-        <visual name="visual">
+        <visual name='visual'>
           <geometry>
             <box>
-              <size>1 1 0.01</size> 
+              <size>1 1 0.01</size>
             </box>
           </geometry>
           <material>
-            <ambient>0 0 1 1</ambient> 
+            <ambient>0 0 1 1</ambient>
             <diffuse>0 0 1 1</diffuse>
           </material>
         </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
       </link>
-    </model> -->
+    </model>
+    <model name='drop_6_bedroom'>
+      <pose>2.15269 6.51919 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>1 1 0.01</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>1 1 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
     <model name='ChairA_01_002'>
       <static>1</static>
       <frame name='aws_robomaker_residential_ChairA_01::__model__' attached_to='aws_robomaker_residential_ChairA_01::link'>
