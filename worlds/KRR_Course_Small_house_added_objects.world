@@ -112,7 +112,7 @@
       </link>
       <pose>-6.5 0.35 0 0 -0 3.14</pose>
     </model>
-    <model name="placement_area_kitchen">
+    <model name="drop_1_cutlery">
       <pose>1.5 0 0 0 0 0</pose>
       <static>true</static>
       <link name="link">
@@ -136,7 +136,7 @@
         </visual>
       </link>
     </model>
-    <model name="placement_area_living_room">
+    <model name="drop_2_bin">
       <pose>-4 -3 0 0 0 0</pose>
       <static>true</static>
       <link name="link">
@@ -160,31 +160,31 @@
         </visual>
       </link>
     </model>
-    <model name="placement_area_living_room_2">
+    <!-- <model name="placement_area_living_room_2">
       <pose>-8 -3 0 0 0 0</pose>
       <static>true</static>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>1 1 0.01</size> <!-- Adjust the size as needed -->
+              <size>1 1 0.01</size> 
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>1 1 0.01</size> <!-- Adjust the size as needed -->
+              <size>1 1 0.01</size> 
             </box>
           </geometry>
           <material>
-            <ambient>0 1 0 1</ambient> <!-- Red color -->
+            <ambient>0 1 0 1</ambient> 
             <diffuse>1 0 0 1</diffuse>
           </material>
         </visual>
       </link>
-    </model>
-    <model name="placement_area_office">
+    </model> -->
+    <model name="drop_3_box">
       <pose>-8 3 0 0 0 0</pose>
       <static>true</static>
       <link name="link">
@@ -208,30 +208,30 @@
         </visual>
       </link>
     </model>
-    <model name="placement_area_bedroom">
+    <!-- <model name="placement_area_bedroom">
       <pose>-1 6 0 0 0 0</pose>
       <static>true</static>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>1 1 0.01</size> <!-- Adjust the size as needed -->
+              <size>1 1 0.01</size> 
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>1 1 0.01</size> <!-- Adjust the size as needed -->
+              <size>1 1 0.01</size> 
             </box>
           </geometry>
           <material>
-            <ambient>0 0 1 1</ambient> <!-- Red color -->
+            <ambient>0 0 1 1</ambient> 
             <diffuse>0 0 1 1</diffuse>
           </material>
         </visual>
       </link>
-    </model>
+    </model> -->
     <model name='ChairA_01_002'>
       <static>1</static>
       <frame name='aws_robomaker_residential_ChairA_01::__model__' attached_to='aws_robomaker_residential_ChairA_01::link'>
@@ -2429,56 +2429,6 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='floor_Kitchen'>
-      <frame name='floor_Kitchen::__model__' attached_to='floor_Kitchen::link'>
-        <pose relative_to='__model__'>0 0 0 0 -0 0</pose>
-      </frame>
-      <static>1</static>
-      <link name='floor_Kitchen::link'>
-        <collision name='collision'>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://floor_Kitchen/meshes/floor_Kitchen.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <surface>
-            <contact>
-              <collide_bitmask>2</collide_bitmask>
-              <ode/>
-            </contact>
-            <friction>
-              <ode>
-                <mu>100</mu>
-                <mu2>50</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <meta>
-            <layer>0</layer>
-          </meta>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://floor_Kitchen/meshes/floor_Kitchen.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <pose relative_to='floor_Kitchen::__model__'>0 0 0 0 -0 0</pose>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
     <state world_name='plasys_house'>
       <sim_time>6636 694000000</sim_time>
       <real_time>640 7838479</real_time>
@@ -2738,16 +2688,6 @@
         <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='floor_Bedroom::link'>
-          <pose>0 0 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='floor_Kitchen'>
-        <pose>0 0 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='floor_Kitchen::link'>
           <pose>0 0 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
