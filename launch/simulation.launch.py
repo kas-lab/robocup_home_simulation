@@ -20,10 +20,23 @@ from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+
 from launch.substitutions import LaunchConfiguration
+from launch.substitutions import PathJoinSubstitution
+from launch_ros.substitutions import FindPackageShare
+
+from launch.actions import AppendEnvironmentVariable
+# from launch.substitutions import EnvironmentVariable
 
 def generate_launch_description():
-    robot_name = DeclareLaunchArgument(
+    pkg_world = get_package_share_directory('robocup_home_simulation')
+    world_path = os.path.join(pkg_world, 'worlds', 'test_scenario1.1.world')
+    gz_args = DeclareLaunchArgument(
+        'gz_args',
+        default_value='-v 4 -r ' + world_path
+    )
+    
+    gui_arg = DeclareLaunchArgument(
         'gui',
         default_value='true',
         description='Run with gui (true/false)')
@@ -31,25 +44,39 @@ def generate_launch_description():
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
     # pkg_world = get_package_share_directory('aws_robomaker_small_house_world')
     # world_path = os.path.join(pkg_world, 'worlds', 'small_house.world')
-    pkg_world = get_package_share_directory('plasys_house_world')
-    world_path = os.path.join(pkg_world, 'worlds', 'plasys_house', 'plasys_house.world')
+    # pkg_world = get_package_share_directory('plasys_house_world')
+    # world_path = os.path.join(pkg_world, 'worlds', 'plasys_house', 'plasys_house.world')
 
-    small_house_world_launch = IncludeLaunchDescription(
+    
+    simulation_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')),
         launch_arguments={
-           'gz_args': '-v 4 -r ' + world_path
+           'gz_args': LaunchConfiguration('gz_args'),
         }.items(),
     )
 
-    pkg_robocup_simulation = get_package_share_directory('robocup_home_simulation')
-    albert_simulation_path = os.path.join(
-        pkg_robocup_simulation, 'launch', 'albert_gazebo.launch.py')
-    albert_simulation_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(albert_simulation_path),
-    )
+    pkg_plasys_house_world = get_package_share_directory(
+        'plasys_house_world')
+    plasys_house_world_models = os.path.join(
+        pkg_plasys_house_world,
+        'models')
+
+    pkg_aws_robomaker_small_house_world = get_package_share_directory(
+        'aws_robomaker_small_house_world')
+    aws_robomaker_small_house_world_models = os.path.join(
+        pkg_aws_robomaker_small_house_world,
+        'models')
+    
+    pkg_sdf_models = get_package_share_directory(
+        'sdf_models')
 
     return LaunchDescription([
-        small_house_world_launch,
-        albert_simulation_launch
+        AppendEnvironmentVariable(name='GZ_SIM_RESOURCE_PATH', value=[
+            ':',plasys_house_world_models,
+            ':',aws_robomaker_small_house_world_models,
+            ':',pkg_sdf_models]),
+        gz_args,
+        gui_arg,
+        simulation_launch,
     ])
