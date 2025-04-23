@@ -5,7 +5,7 @@ repositories:
     version: ros2
   plasys_house_world:
     type: git
-    url: https://github.com/dgarcu/plasys_house_world
+    url: https://github.com/kas-lab/plasys_house_world
     version: humble
   sdf_models:
     type: git
