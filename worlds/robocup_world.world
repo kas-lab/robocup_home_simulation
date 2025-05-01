@@ -356,7 +356,7 @@
       <model name='floor_Living_room'>
         <pose>-0.064258 0.051666 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='floor_Living room::link'>
+        <link name='floor_Living_room::link'>
           <pose>-0.064258 0.051666 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
@@ -366,7 +366,7 @@
       <model name='floor_Main_bedroom'>
         <pose>5.20205 -1.55284 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='floor_Main bedroom::link'>
+        <link name='floor_Main_bedroom::link'>
           <pose>5.20205 -1.55284 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
@@ -376,7 +376,7 @@
       <model name='floor_Main_bedroom_clone'>
         <pose>0.831203 -0.968138 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='floor_Main bedroom::link'>
+        <link name='floor_Main_bedroom::link'>
           <pose>0.831203 -0.968138 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
@@ -1094,14 +1094,14 @@
     </model>
     <model name='floor_Main_bedroom'>
       <static>true</static>
-      <model name='floor_Main bedroom' canonical_link='link'>
+      <model name='floor_Main_bedroom' canonical_link='link'>
         <pose relative_to='__model__'>0 0 0 0 -0 0</pose>
         <link name='link'>
           <collision name='collision'>
             <pose>0 0 0 0 -0 0</pose>
             <geometry>
               <mesh>
-                <uri>model://floor_Main bedroom/meshes/floor_Main bedroom.dae</uri>
+                <uri>model://floor_Main_bedroom/meshes/floor_Main_bedroom.dae</uri>
                 <scale>1 1 1</scale>
               </mesh>
             </geometry>
@@ -1130,7 +1130,7 @@
             <pose>0 0 0 0 -0 0</pose>
             <geometry>
               <mesh>
-                <uri>model://floor_Main bedroom/meshes/floor_Main bedroom.dae</uri>
+                <uri>model://floor_Main_bedroom/meshes/floor_Main_bedroom.dae</uri>
                 <scale>1 1 1</scale>
               </mesh>
             </geometry>
@@ -1146,14 +1146,14 @@
     </model>
     <model name='floor_Living_room'>
       <static>true</static>
-      <model name='floor_Living room' canonical_link='link'>
+      <model name='floor_Living_room' canonical_link='link'>
         <pose relative_to='__model__'>0 0 0 0 -0 0</pose>
         <link name='link'>
           <collision name='collision'>
             <pose>0 0 0 0 -0 0</pose>
             <geometry>
               <mesh>
-                <uri>model://floor_Living room/meshes/floor_Living room.dae</uri>
+                <uri>model://floor_Living_room/meshes/floor_Living_room.dae</uri>
                 <scale>1 1 1</scale>
               </mesh>
             </geometry>
@@ -1182,7 +1182,7 @@
             <pose>0 0 0 0 -0 0</pose>
             <geometry>
               <mesh>
-                <uri>model://floor_Living room/meshes/floor_Living room.dae</uri>
+                <uri>model://floor_Living_room/meshes/floor_Living_room.dae</uri>
                 <scale>1 1 1</scale>
               </mesh>
             </geometry>
@@ -3698,14 +3698,14 @@
     <model name='floor_Main_bedroom_clone'>
       <static>true</static>
       <pose>5.3 -1.5 0 0 -0 0</pose>
-      <model name='floor_Main bedroom' canonical_link='link'>
+      <model name='floor_Main_bedroom' canonical_link='link'>
         <pose relative_to='__model__'>0 0 0 0 -0 0</pose>
         <link name='link'>
           <collision name='collision'>
             <pose>0 0 0 0 -0 0</pose>
             <geometry>
               <mesh>
-                <uri>model://floor_Main bedroom/meshes/floor_Main bedroom.dae</uri>
+                <uri>model://floor_Main_bedroom/meshes/floor_Main_bedroom.dae</uri>
                 <scale>1 1 1</scale>
               </mesh>
             </geometry>
@@ -3734,7 +3734,7 @@
             <pose>0 0 0 0 -0 0</pose>
             <geometry>
               <mesh>
-                <uri>model://floor_Main bedroom/meshes/floor_Main bedroom.dae</uri>
+                <uri>model://floor_Main_bedroom/meshes/floor_Main_bedroom.dae</uri>
                 <scale>1 1 1</scale>
               </mesh>
             </geometry>

@@ -1,8 +1,66 @@
 # robocup_home_simulation
 Robocup@Home simulation
 
+## Installation
 
-## Albert
+Instructions for getting the general dependencies for this repository. Check the instructions below to get the extra dependencies required to run the Mirte or Albert robot.
+
+Get repo:
+```Bash
+mkdir -p ~/robocup_ws/src
+cd ~/robocup_ws/src
+git clone git@github.com:kas-lab/robocup_home_simulation.git
+```
+
+Get general deps:
+```Bash
+cd ~/robocup_ws/
+vcs import src < src/robocup_home_simulation/general_dependencies.repos
+```
+
+Install deps:
+```Bash
+cd ~/robocup_ws/
+source /opt/ros/humble/setup.bash
+rosdep install --from-paths src --ignore-src -r -y
+```
+
+Build workspace:
+```Bash
+cd ~/robocup_ws
+source /opt/ros/humble/setup.bash
+colcon build --symlink-install
+```
+
+### Mirte
+
+Get Mirte deps:
+```Bash
+cd ~/robocup_ws/
+vcs import src < src/robocup_home_simulation/mirte_dependencies.repos
+```
+
+Install deps:
+```Bash
+cd ~/robocup_ws/
+source /opt/ros/humble/setup.bash
+rosdep install --from-paths src --ignore-src -r -y
+```
+
+Ignore the mirte_telemetrix package:
+```Bash
+cd ~/robocup_ws/
+touch src/mirte-ros-packages/mirte_telemetrix_cpp/COLCON_IGNORE
+```
+
+Build workspace:
+```Bash
+cd ~/robocup_ws
+source /opt/ros/humble/setup.bash
+colcon build --symlink-install
+```
+
+### Albert
 
 Instructions to build the albert robot pkg (this process will be improved when releasing the albert pkg)
 
@@ -27,38 +85,15 @@ cmake --build .
 sudo make install
 ```
 
-## Build
-
-Get repo:
-```Bash
-mkdir -p ~/robocup_ws/src
-cd ~/robocup_ws/
-git clone git@github.com:kas-lab/robocup_home_simulation.git
-```
-
-Get github deps:
-```Bash
-cd ~/robocup_ws/
-vcs import src < robocup_home_simulation/simulation.rosinstall
-```
-
-Install deps:
-```Bash
-cd ~/robocup_ws/
-source /opt/ros/humble/setup.bash
-rosdep install --from-paths src --ignore-src -r -y
-```
-
-Build package:
-```Bash
-cd ~/robocup_ws
-source /opt/ros/humble/setup.bash
-colcon build --symlink-install
-```
-
 ## Run simulation
 
 ```Bash
 source install/setup.bash
 ros2 launch robocup_home_simulation simulation.launch.py
+```
+
+### Mirte
+
+```Bash
+ros2 launch robocup_home_simulation mirte_robocup.launch.py
 ```

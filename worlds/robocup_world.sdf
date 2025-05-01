@@ -1,0 +1,579 @@
+<sdf version='1.9'>
+  <world name='kaslab_robocup'>
+    <physics name='1ms' type='ignored'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <plugin name='gz::sim::systems::Physics' filename='ignition-gazebo-physics-system'/>
+    <plugin name='gz::sim::systems::UserCommands' filename='ignition-gazebo-user-commands-system'/>
+    <plugin name='gz::sim::systems::SceneBroadcaster' filename='ignition-gazebo-scene-broadcaster-system'/>
+    <plugin name='gz::sim::systems::Contact' filename='ignition-gazebo-contact-system'/>
+    <plugin name='gz::sim::systems::Sensors' filename='libignition-gazebo-sensors-system.so'/>
+    <plugin name='gz::sim::systems::Imu' filename='libignition-gazebo-imu-system.so'/>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0 0 0 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    
+     <include>
+        <uri>model://aws_robomaker_residential_ChairA_01</uri>
+        <name>ChairA_01_001</name>
+        <pose>-6.5 0.35 0 0 0 3.14</pose>
+        <static>true</static>
+    </include>
+    <include>
+      <uri>model://aws_robomaker_residential_ChairA_01</uri>
+      <name>ChairA_01_002</name>
+      <pose>-6.5 -0.35 0 0 0 3.14</pose>
+      <static>true</static>
+    </include>
+    <include>
+      <uri>model://aws_robomaker_residential_ChairA_01</uri>
+      <name>ChairA_01_003</name>
+      <pose>-5.5 0.35 0 0 0 0</pose>
+      <static>true</static>
+    </include>
+    <include>
+      <uri>model://aws_robomaker_residential_ChairA_01</uri>
+      <name>ChairA_01_004</name>
+      <pose>-5.5 -0.35 0 0 0 0</pose>
+      <static>true</static>
+    </include>
+     <include>
+      <uri>model://aws_robomaker_residential_KitchenTable_01</uri>
+      <name>KitchenTable_01_001</name>
+      <pose>-6 0 0 0 -0 0</pose>
+      <static>true</static>
+    </include>
+    <include>
+      <uri>model://Sofas_Oa1bfa586a8f8_lod0</uri>
+      <name>Sofas_Oa1bfa586a8f8_lod0_8</name>
+      <pose>-7.75 -4.11 0 0 -0 3.14</pose>
+      <static>true</static>
+    </include>
+
+  <include>
+    <uri>model://SofaTables_Occc3fc60df11_lod0</uri>
+    <name>SofaTables_Occc3fc60df11_lod0_14</name>
+    <pose>-9.03 6.60225 0 0 -0 1.57</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://LivingRoomChairs_Obc1361750757_lod0</uri>
+    <name>LivingRoomChairs_Obc1361750757_lod0_12</name>
+    <pose>-5.77248 -3.11844 0 0 -0 -1.59183</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://Dressers_O3026d3820106_lod0</uri>
+    <name>Dressers_O3026d3820106_lod0_7</name>
+    <pose>-3.72 7.15 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://Ottomans_Oe0e3f5670b60_lod0</uri>
+    <name>Ottomans_Oe0e3f5670b60_lod0_9</name>
+    <pose>-7.75 -3.25004 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_0</uri>
+    <name>wall_0</name>
+    <pose>-2.496 -0.003422 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+      
+  <include>
+    <uri>model://wall_1</uri>
+    <name>wall_1</name>
+    <pose>-2.48791 -0.018402 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_10</uri>
+    <name>wall_10</name>
+    <pose>-0.139485 0.079025 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_11</uri>
+    <name>wall_11</name>
+    <pose>-0.102581 0.073444 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_12</uri>
+    <name>wall_12</name>
+    <pose>-0.097621 0.008188 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_13</uri>
+    <name>wall_13</name>
+    <pose>-0.128935 -0.006042 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_14</uri>
+    <name>wall_14</name>
+    <pose>8.56808 -1.55714 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_15</uri>
+    <name>wall_15</name>
+    <pose>-0.105904 -3.59449 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_16</uri>
+    <name>wall_16</name>
+    <pose>-0.111787 -3.63543 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_19</uri>
+    <name>wall_19</name>
+    <pose>-0.10264 0.105205 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_20</uri>
+    <name>wall_20</name>
+    <pose>0.870944 -1.61568 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_20</uri>
+    <name>wall_20_clone</name>
+    <pose>5.31957 -1.61895 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_21</uri>
+    <name>wall_21</name>
+    <pose>0.779759 -4.15684 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_27</uri>
+    <name>wall_27</name>
+    <pose>-0.101765 0.085669 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_28</uri>
+    <name>wall_28</name>
+    <pose>-0.094699 -0.000858 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_29</uri>
+    <name>wall_29</name>
+    <pose>-2.47025 -0.171618 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_31</uri>
+    <name>wall_31</name>
+    <pose>-3.6192 -1.5304 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_33</uri>
+    <name>wall_33</name>
+    <pose>-2.48796 -0.019528 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_33</uri>
+    <name>wall_33_clone</name>
+    <pose>-14.4297 1.35711 0 0 0 -1.5714</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_5</uri>
+    <name>wall_5</name>
+    <pose>-1.92681 7.85122 0 0 -0 1.57022</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_7</uri>
+    <name>wall_7</name>
+    <pose>-0.079016 -0.094122 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_8</uri>
+    <name>wall_8</name>
+    <pose>-0.175003 -0.008628 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://wall_9</uri>
+    <name>wall_9</name>
+    <pose>0.020455 -0.064411 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://floor_Bedroom</uri>
+    <name>floor_Bedroom</name>
+    <pose>0 0 0.0001 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://floor_Living_room</uri>
+    <name>floor_Living_room</name>
+    <pose>-0.064258 0.051666 0.0001 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://floor_Main_bedroom</uri>
+    <name>floor_Main_bedroom</name>
+    <pose>5.20205 -1.55284 0.0001 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://floor_Main_bedroom</uri>
+    <name>floor_Main_bedroom_clone</name>
+    <pose>0.831203 -0.968138 0.0001 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://floor_Kitchen</uri>
+    <name>floor_Kitchen</name>
+    <pose>0 0 0.0001 0 -0 0</pose>
+    <static>true</static>
+  </include>  
+
+
+  <include>
+    <uri>model://aws_robomaker_residential_Refrigerator_01</uri>
+    <name>Refrigerator_01_001</name>
+    <pose>2.50046 -1.29591 0 0 0 -1.59357</pose>
+    <static>true</static>
+  </include> 
+
+  <include>
+    <uri>model://aws_robomaker_residential_KitchenCabinet_01</uri>
+    <name>KitchenCabinet_01_001</name>
+    <pose>1.3 0.75 0 0 0 -1.57319</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://aws_robomaker_residential_Rangehood_01</uri>
+    <name>Rangehood_01_001</name>
+      <pose>0.5 1.8 2 0 -0 1.57</pose>
+      <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://ServingCarts_Od1716e02c5bd_lod0</uri>
+    <name>ServingCarts_Od1716e02c5bd_lod0_28</name>
+      <pose>-0.449241 -1.80002 0 0 -0 3.14</pose>
+      <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://DishWasher_f2d1aeaead9b_lod0</uri>
+    <name>DishWasher_f2d1aeaead9b_lod0_23</name>
+      <pose>-1.80001 -1.70731 0 0 -0 3.14</pose>
+      <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://HomeOfficeDesks_Oab58b4fda1f7_lod0</uri>
+    <name>HomeOfficeDesks_Oab58b4fda1f7_lod0_33</name>
+    <pose>-5.83096 7.07951 0 0 -0 0</pose>  
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://HomeOfficeDeskChairs_Oaed1cbd04270_lod0</uri>
+    <name>HomeOfficeDeskChairs_Oaed1cbd04270_lod0_34</name>
+    <pose>-5.87715 6.50205 0 0 -0 3.14</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://Bookcases_Oe43e7e39f537_lod0</uri>
+    <name>Bookcases_Oe43e7e39f537_lod0_35</name>
+    <pose>2.0255 7.2194 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://aws_robomaker_residential_PortraitA_02_plasys</uri>
+    <name>aws_robomaker_residential_PortraitA_02_plasys</name>
+    <pose>2.875 6.15 1.5 0 -0 1.57</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://FloorLamps_Oa651b7cbe4d7_lod0</uri>
+    <name>FloorLamps_Oa651b7cbe4d7_lod0_36</name>
+    <pose>2.65 5.239 0 0 -0 0</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://Nightstands_O14c5f5d1199b_lod0</uri>
+    <name>Nightstands_O14c5f5d1199b_lod0_31</name>
+    <pose>2.5606 4.25013 0 0 0 -1.57319</pose>
+    <static>true</static>
+  </include>
+
+  <include>
+    <uri>model://Headboards_Occ57434fb9f0_lod0</uri>
+    <name>Headboards_Occ57434fb9f0_lod0_30</name>
+    <pose>1.70223 3.10002 0 0 0 -1.57319</pose>
+    <static>true</static>
+  </include>
+
+
+    <light name='sun' type='directional'>
+      <pose>0 0 10 0 -0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-0.5 0.1 -0.9</direction>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <linear>0.01</linear>
+        <constant>0.90000000000000002</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+
+    <light name='Main_Bedroom_Ceiling_Light' type='point'>
+      <pose>-8 6.3 3 0 -0 0</pose>
+      <cast_shadows>false</cast_shadows>
+      <intensity>1</intensity>
+      <direction>0 0 -1</direction>
+      <diffuse>0.25 0.25 0.25 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>20</range>
+        <linear>0.01</linear>
+        <constant>0.32000000000000001</constant>
+        <quadratic>0.029999999999999999</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+
+    <light name='Living_Room_Ceiling_Light_1' type='point'>
+      <pose>-6.25 2.25 3 0 -0 0</pose>
+      <cast_shadows>false</cast_shadows>
+      <intensity>1</intensity>
+      <direction>0 0 -1</direction>
+      <diffuse>0.25 0.25 0.25 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>20</range>
+        <linear>0.01</linear>
+        <constant>0.32000000000000001</constant>
+        <quadratic>0.029999999999999999</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+
+    <light name='Living_Room_Ceiling_Light_2' type='point'>
+      <pose>-6.25 -2.5 3 0 -0 0</pose>
+      <cast_shadows>false</cast_shadows>
+      <intensity>1</intensity>
+      <direction>0 0 -1</direction>
+      <diffuse>0.25 0.25 0.25 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>20</range>
+        <linear>0.01</linear>
+        <constant>0.32000000000000001</constant>
+        <quadratic>0.029999999999999999</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+
+    <light name='Bathroom_Ceiling_Light' type='point'>
+      <pose>-11 1.05 3 0 -0 0</pose>
+      <cast_shadows>false</cast_shadows>
+      <intensity>1</intensity>
+      <direction>0 0 -1</direction>
+      <diffuse>0.25 0.25 0.25 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>20</range>
+        <linear>0.01</linear>
+        <constant>0.32000000000000001</constant>
+        <quadratic>0.029999999999999999</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+
+    <light name='Kitchen_Ceiling_Light_1' type='point'>
+      <pose>0 0 3 0 -0 0</pose>
+      <cast_shadows>false</cast_shadows>
+      <intensity>1</intensity>
+      <direction>0 0 -1</direction>
+      <diffuse>0.25 0.25 0.25 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>20</range>
+        <linear>0.01</linear>
+        <constant>0.32000000000000001</constant>
+        <quadratic>0.029999999999999999</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+
+    <light name='Bedroom_Ceiling_Light_1' type='point'>
+      <pose>1 5 3 0 -0 0</pose>
+      <cast_shadows>false</cast_shadows>
+      <intensity>1</intensity>
+      <direction>0 0 -1</direction>
+      <diffuse>0.25 0.25 0.15 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>20</range>
+        <linear>0.01</linear>
+        <constant>0.32000000000000001</constant>
+        <quadratic>0.029999999999999999</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+
+    <light name='Hallway_Ceiling_Light_1' type='point'>
+      <pose>-3 4 3 0 -0 0</pose>
+      <cast_shadows>false</cast_shadows>
+      <intensity>1</intensity>
+      <direction>0 0 -1</direction>
+      <diffuse>0.15 0.15 0.15 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>20</range>
+        <linear>0.01</linear>
+        <constant>0.32000000000000001</constant>
+        <quadratic>0.029999999999999999</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+  </world>
+</sdf>

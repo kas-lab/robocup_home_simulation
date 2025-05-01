@@ -12,7 +12,7 @@ def generate_launch_description():
     world_path = PathJoinSubstitution([
                 FindPackageShare('robocup_home_simulation'),
                 'worlds',
-                'robocup_world.world'])
+                'robocup_world.sdf'])
 
     gz_launch_file = os.path.join(get_package_share_directory("mirte_gazebo"),
                                   "launch",
