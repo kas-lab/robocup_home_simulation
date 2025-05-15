@@ -6,7 +6,7 @@ repositories:
   mirte-gazebo:
     type: git
     url: https://github.com/EGAlberts/mirte-gazebo.git
-    version: docker
+    version: fortress
   mirte_navigation:
     type: git
     url: https://github.com/kas-lab/mirte_navigation.git
