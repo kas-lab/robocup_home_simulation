@@ -96,6 +96,17 @@ ros2 launch robocup_home_simulation simulation.launch.py
 
 ### Mirte
 
+To just launch the ignition simulation use the following command:
 ```Bash
 ros2 launch robocup_home_simulation mirte_robocup.launch.py
+```
+
+Then, you can use this command for Nav2 + Rviz:
+```Bash
+ros2 launch mirte_navigation robot_navigation.launch.py
+```
+
+And this command for MoveIt2 + Rviz:
+```Bash
+ros2 launch mirte_moveit_config mirte_moveit.launch.py
 ```
