@@ -3,6 +3,28 @@ This is the ROS2 Humble Ignition Fortress branch of the TU Delft KAS Lab's Roboc
 This simulation currently supports two robots: the Mirte Master, and Albert.
 
 ## Installation
+### Docker Installation
+We currently offer a dockerized version of the Mirte simulation specifically for use on Ubuntu, the steps to use it are as follows:
+
+Pull the latest version of the docker image
+```Bash
+docker pull ghcr.io/kas-lab/robocup_home_simulation:fortress
+```
+
+Allow docker to use a GUI
+```Bash
+xhost +
+```
+
+Run a container of the image
+```Bash
+docker run --name kaslab_robocup -it --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro ghcr.io/kas-lab/robocup_home_simulation:fortress
+```
+
+Now you can proceed to the Run Simulation instructions below to try things out, you can open multiple terminals of the container using the following commmand:
+```Bash
+docker exec -it kaslab_robocup bash
+```
 
 ### Local Installation
 Instructions for getting the general dependencies for this repository. Check the instructions below to get the extra dependencies required to run the Mirte or Albert robot.
