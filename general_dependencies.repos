@@ -6,7 +6,7 @@ repositories:
   plasys_house_world:
     type: git
     url: https://github.com/kas-lab/plasys_house_world
-    version: humble
+    version: jazzy
   sdf_models:
     type: git
     url: https://github.com/kas-lab/SDF_models.git
