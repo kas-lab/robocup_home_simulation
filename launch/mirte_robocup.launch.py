@@ -16,7 +16,7 @@ def generate_launch_description():
 
     gz_launch_file = os.path.join(get_package_share_directory("mirte_gazebo"),
                                   "launch",
-                                  "mirte_simulation_fortress.launch.py")
+                                  "mirte_simulation.launch.py")
 
     gz_launch = IncludeLaunchDescription(
         AnyLaunchDescriptionSource(gz_launch_file),
